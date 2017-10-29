@@ -1,13 +1,18 @@
 .arrival-list {
   .station {
+    @include responsize-size-2d(padding, 32, 0);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 32px 0;
     
     h3 {
+      @include responsize-size(margin-left, 24);
+      @include font-size(28);
       display: inline;
-      margin-left: 24px; 
+    }
+
+    svg {
+      @include responsize-size(height, 48);
     }
   }
 }

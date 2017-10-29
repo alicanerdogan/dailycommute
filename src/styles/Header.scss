@@ -2,11 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 32px 0;
+  @include responsize-size-2d(padding, 32, 0);
   
   h1 {
+    @include responsize-size(margin-left, 32);
     text-transform: uppercase;
     display: inline;
-    margin-left: 32px; 
+  }
+
+  svg {
+    @include responsize-size(height, 72);
   }
 }

@@ -1,3 +1,7 @@
 .setup {
-  padding-top: 48px;
+  @include responsize-size(padding-top, 48);
+  
+  h3 {
+    @include font-size(28);
+  }
 }

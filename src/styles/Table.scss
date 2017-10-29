@@ -1,11 +1,10 @@
 table.table {
-  background: rgba(196, 196, 196, 0.16);
-  border-radius: 5px;
-  font-size: 24px;
-  padding: 0 24px;
+  @include shallow-box;
+  @include font-size(24);
+  @include responsize-size-2d(padding-left, 0, 24);
 
   thead {
-    background: rgba(196, 196, 196, 0.16);
+    @include shallow-background;
   }
 
   td, th {
@@ -14,10 +13,10 @@ table.table {
   }
 
   td:first-child, th:first-child {
-    padding-left: 48px;
+    @include responsize-size(padding-left, 48);
   }
   
   td:last-child, th:last-child {
-    padding-right: 48px;
+    @include responsize-size(padding-right, 48);
   }
 }

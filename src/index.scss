@@ -5,6 +5,55 @@ $container-max-widths: (
   xl: 900px
 ) !default;
 
+@mixin shallow-background {
+  background: rgba(196, 196, 196, 0.16);
+}
+
+@mixin shallow-box {
+  @include shallow-background;
+  border-radius: 5px;
+}
+
+@mixin responsize-size($type, $px) {
+  @include media-breakpoint-down(sm) {
+    #{$type}: ($px*0.5)+px;
+  }
+  @include media-breakpoint-only(md) {
+    #{$type}: ($px*0.75)+px;
+  }
+  @include media-breakpoint-up(lg) {
+    #{$type}: ($px)+px;
+  }
+}
+
+@mixin responsize-size-2d($type, $xpx, $ypx) {
+  @include media-breakpoint-down(sm) {
+    #{$type}: ($xpx*0.5)+px ($ypx*0.5)+px;
+  }
+  @include media-breakpoint-only(md) {
+    #{$type}: ($xpx*0.75)+px ($ypx*0.75)+px;
+  }
+  @include media-breakpoint-up(lg) {
+    #{$type}: ($xpx)+px ($ypx)+px;
+  }
+}
+
+@mixin responsize-size-4d($type, $toppx, $leftpx, $bottompx, $rightpx) {
+  @include media-breakpoint-down(sm) {
+    #{$type}: ($toppx*0.5)+px ($leftpxypx*0.5)+px ($bottompx*0.5)+px ($rightpx*0.5)+px;
+  }
+  @include media-breakpoint-only(md) {
+    #{$type}: ($toppx*0.75)+px ($leftpx*0.75)+px ($bottompx*0.75)+px ($rightpx*0.75)+px;
+  }
+  @include media-breakpoint-up(lg) {
+    #{$type}: ($toppx)+px ($leftpx)+px ($bottompx)+px ($rightpx)+px;
+  }
+}
+
+@mixin font-size($px) {
+  @include responsize-size(font-size, $px);
+}
+
 @import '~bootstrap/scss/bootstrap.scss';
 $color-white: #fff;
 
@@ -18,39 +67,38 @@ body {
   color: $color-white;
 
   background: linear-gradient(180deg, #BE5869 0%, #403A3E 100%);
+  background-attachment: fixed;
 
   #root {
   }
 }
 
 h1 {
-  font-size: 48px;
+  @include font-size(48);
   text-align: center;
 }
 
 h2 {
-  font-size: 36px;
+  @include font-size(36);
+  @include responsize-size("margin-bottom", 48);
   text-align: center;
-  margin-bottom: 48px;
   &.no-margin {
     margin-bottom: 0;
   }
 }
 
 button {
+  @include shallow-box;
+  @include font-size(36);
+  @include responsize-size-2d(padding, 12, 72);
   margin: 0 auto;
   display: block;
   text-transform: uppercase;
   color: $color-white;
-  height: 80px;
-  font-size: 36px;
-  background: rgba(196, 196, 196, 0.16);
-  border-radius: 5px;
   border: none;
-  padding: 0 72px;
 
   &:hover {
-    background: rgba(196, 196, 196, 0.32);
+    @include shallow-background;
   }
 
   &:focus {
@@ -59,11 +107,10 @@ button {
 }
 
 input[type="text"] {
-  padding: 12px 16px;
-  font-size: 36px;
+  @include shallow-box;
+  @include font-size(36);
+  @include responsize-size-2d(padding, 12, 16);
   display: block;
-  background: rgba(196, 196, 196, 0.16);
-  border-radius: 5px;
   border: none;
   color: #fff;
   width: 100%;
