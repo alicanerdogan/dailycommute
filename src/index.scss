@@ -1,0 +1,77 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 900px,
+  xl: 900px
+) !default;
+
+@import '~bootstrap/scss/bootstrap.scss';
+$color-white: #fff;
+
+html {
+  height: 100%
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  color: $color-white;
+
+  background: linear-gradient(180deg, #BE5869 0%, #403A3E 100%);
+
+  #root {
+  }
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 48px;
+  &.no-margin {
+    margin-bottom: 0;
+  }
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+  text-transform: uppercase;
+  color: $color-white;
+  height: 80px;
+  font-size: 36px;
+  background: rgba(196, 196, 196, 0.16);
+  border-radius: 5px;
+  border: none;
+  padding: 0 72px;
+
+  &:hover {
+    background: rgba(196, 196, 196, 0.32);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="text"] {
+  padding: 12px 16px;
+  font-size: 36px;
+  display: block;
+  background: rgba(196, 196, 196, 0.16);
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+@import './styles/App.scss';
+@import './styles/Dropdown.scss';
+@import './styles/Header.scss';
+@import './styles/Setup.scss';
+@import './styles/Table.scss';
+@import './styles/ArrivalList.scss';

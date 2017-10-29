@@ -1,0 +1,46 @@
+{
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "eol-last": ["error", "always"],
+    "brace-style": ["error", "stroustrup"],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "no-mixed-spaces-and-tabs": 2,
+    "quotes": ["error","single"],
+    "semi": ["error","always"],
+    "comma-dangle": ["error","never"],
+    "no-cond-assign": ["error","always"],
+    "no-console": 1,
+    "no-constant-condition": 1,
+    "no-debugger": 2,
+    "no-dupe-args": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-empty": 1,
+    "no-ex-assign": 2,
+    "no-extra-semi": 2,
+    "no-func-assign": 1,
+    "no-irregular-whitespace": 2,
+    "no-unreachable": 1,
+    "valid-typeof": 2,
+    "eqeqeq": 2,
+    "no-undef": 2,
+    "constructor-super": 1,
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-this-before-super": 1,
+    "no-var": 1,
+    "prefer-const": 2
+  }
+}

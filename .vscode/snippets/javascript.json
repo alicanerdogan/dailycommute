@@ -1,0 +1,143 @@
+{
+	"Create action type": {
+		"prefix": "%action",
+		"description": "Creates an action type",
+		"body": [
+			"export const ${1:ACTION_TYPE} = \"${1:ACTION_TYPE}\";"
+		]
+	},
+	"Create async action type": {
+		"prefix": "%aaction",
+		"description": "Creates an async action type",
+		"body": [
+			"export const ${1:ASYNC_ACTION_TYPE} = createAsyncActionType(\"${1:ASYNC_ACTION_TYPE}\");"
+		]
+	},
+	"Create GET Action": {
+		"prefix": "%get",
+		"description": "Creates a GET Action",
+		"body": [
+			"export function ${1:actionName}(${2:params}) {",
+			"  return createRESTCallAction(${3:ASYNC_ACTION_TYPE}, ${4:API_ENDPOINT});",
+			"}"
+		]
+	},
+	"Create POST Action": {
+		"prefix": "%post",
+		"description": "Creates a POST Action",
+		"body": [
+			"export function ${1:actionName}(${2:params}) {",
+			"  return createRESTCallAction(${3:ASYNC_ACTION_TYPE}, ${4:API_ENDPOINT}, {",
+			"    httpMethod: 'POST',",
+			"    options: { body: ${5:payload} }",
+			"  });",
+			"}"
+		]
+	},
+	"Create REST Action": {
+		"prefix": "%rest",
+		"description": "Creates a REST Action",
+		"body": [
+			"export function ${1:actionName}(${2:params}) {",
+			"  return createRESTCallAction(${3:ASYNC_ACTION_TYPE}, ${4:API_ENDPOINT}, {",
+			"    httpMethod: '${5:METHOD}',",
+			"    options: { body: ${6:payload} }",
+			"  });",
+			"}"
+		]
+	},
+	"Create Authorized GET Action": {
+		"prefix": "%aget",
+		"description": "Creates an async GET Action",
+		"body": [
+			"export function ${1:actionName}(${2:params}) {",
+			"  return createAuthorizedRESTAction(${3:ASYNC_ACTION_TYPE}, ${4:API_ENDPOINT});",
+			"}"
+		]
+	},
+	"Create Authorized POST Action": {
+		"prefix": "%apost",
+		"description": "Creates an async POST Action",
+		"body": [
+			"export function ${1:actionName}(${2:params}) {",
+			"  return createAuthorizedRESTAction(${3:ASYNC_ACTION_TYPE}, ${4:API_ENDPOINT}, {",
+			"    httpMethod: 'POST',",
+			"    options: { body: ${5:payload} }",
+			"  });",
+			"}"
+		]
+	},
+	"Create Authorized REST Action": {
+		"prefix": "%arest",
+		"description": "Creates an async REST Action",
+		"body": [
+			"export function ${1:actionName}(${2:params}) {",
+			"  return createAuthorizedRESTAction(${3:ASYNC_ACTION_TYPE}, ${4:API_ENDPOINT}, {",
+			"    httpMethod: '${5:METHOD}',",
+			"    options: { body: ${6:payload} }",
+			"  });",
+			"}"
+		]
+	},
+	"Create a component": {
+		"prefix": "%component",
+		"description": "description",
+		"body": [
+			"import React, { PureComponent } from 'react';",
+			"",
+			"export default class ${1:ComponentName} extends PureComponent {",
+			"  constructor(props) {",
+			"    super(props);",
+			"    this.state = {};",
+			"  }",
+			"",
+			"  render() {",
+			"    return null;",
+			"  }",
+			"}"
+		]
+	},
+	"Create a stateless component": {
+		"prefix": "%scomponent",
+		"description": "Creates a stateles component",
+		"body": [
+			"import React from 'react';",
+			"",
+			"export default ${1:props} => {",
+			"  return null;",
+			"};"
+		]
+	},
+	"Create container": {
+		"prefix": "%container",
+		"description": "Creates a container",
+		"body": [
+			"import { connect } from 'react-redux';",
+			"",
+			"import ${1:Component} from 'Components/${1:Component}';",
+			"import ${2:action} from 'Actions/${2:action}';",
+			"",
+			"const mapStateToProps = state => state;",
+			"",
+			"export default connect(mapStateToProps, { ${2:action} })(${1:Component});"
+		]
+	},
+	"Create reducer": {
+		"prefix": "%reducer",
+		"description": "Creates a reducer",
+		"body": [
+			"import { ${1:ACTION_TYPE} } from 'Actions';",
+			"",
+			"const DEFAULT_STATE = {$2};",
+			"",
+			"export default (state = DEFAULT_STATE, action) => {",
+			"  switch (action.type) {",
+			"    case ${1:ACTION_TYPE}:",
+			"      return state;",
+			"    default:",
+			"      return state;",
+			"  }",
+			"};"
+		]
+	}
+}

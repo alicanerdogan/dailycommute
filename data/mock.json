@@ -1,0 +1,88 @@
+[
+  {
+    "ref": "1|42547|8|86|20102017",
+    "station": {
+      "type": "station",
+      "name": "Spreewaldplatz",
+      "coordinates": {
+        "latitude": 52.497642,
+        "longitude": 13.431277
+      },
+      "id": "900000015152",
+      "products": {
+        "suburban": false,
+        "subway": false,
+        "tram": false,
+        "bus": true,
+        "ferry": false,
+        "express": false,
+        "regional": false
+      }
+    },
+    "when": "2017-10-20T16:02:00+02:00",
+    "direction": "U Hermannplatz",
+    "line": {
+      "type": "line",
+      "name": "M29",
+      "class": 8,
+      "productCode": 3,
+      "productName": "B",
+      "product": "bus",
+      "mode": "bus",
+      "id": "m29",
+      "symbol": "M",
+      "nr": 29,
+      "metro": true,
+      "express": false,
+      "night": false
+    },
+    "remarks": [
+      null
+    ],
+    "trip": 42547,
+    "delay": null
+  },
+  {
+    "ref": "1|9174|38|86|20102017",
+    "station": {
+      "type": "station",
+      "name": "Spreewaldplatz",
+      "coordinates": {
+        "latitude": 52.497642,
+        "longitude": 13.431277
+      },
+      "id": "900000015152",
+      "products": {
+        "suburban": false,
+        "subway": false,
+        "tram": false,
+        "bus": true,
+        "ferry": false,
+        "express": false,
+        "regional": false
+      }
+    },
+    "when": "2017-10-20T16:05:00+02:00",
+    "direction": "Grunewald, Roseneck",
+    "line": {
+      "type": "line",
+      "name": "M29",
+      "class": 8,
+      "productCode": 3,
+      "productName": "B",
+      "product": "bus",
+      "mode": "bus",
+      "id": "m29",
+      "symbol": "M",
+      "nr": 29,
+      "metro": true,
+      "express": false,
+      "night": false
+    },
+    "remarks": [
+      null
+    ],
+    "trip": 9174,
+    "delay": 2040
+  }
+]
