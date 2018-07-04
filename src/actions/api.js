@@ -1,7 +1,7 @@
 import { createRESTAction } from 'Util/rest';
 import { GET_DEPARTURES, SEARCH_STATIONS } from './';
 
-const BASE_URL = 'https://vbb.transport.rest/';
+const BASE_URL = 'https://2.vbb.transport.rest/';
 const STATIONS_URL = `${BASE_URL}stations`;
 
 export function getDepartures(stationId) {
